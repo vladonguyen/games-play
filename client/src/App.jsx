@@ -1,12 +1,14 @@
+import Header from "./components/header/Header"
 
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-     <h1>Hallo world</h1>
-    </>
+    <div id="box">
+     <Header />
+      </div>
+     
+    
   )
 }
 
