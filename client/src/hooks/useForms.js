@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 export default function useForm(submitHandler, initialValues){
-const [value, setValue] = useState({initialValues});
+const [values, setValues] = useState({initialValues});
 
 const onChange = (e) =>{
 setValues(state => ({
@@ -16,6 +16,7 @@ const onSubmit = (e) =>{
 }
     return {
 values,
-onChange
+onChange,
+onSubmit,
     }
 }
