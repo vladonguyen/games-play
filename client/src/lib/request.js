@@ -13,13 +13,9 @@ return options;
 
  const request = async (method, url, data) => {
 
-
-
-
 const response = await fetch(url, {
-    method,
     ...buildOptions(data),
-    method
+    method,
 });
 const result = await response.json();
 return result;

@@ -27,7 +27,7 @@ export default function Login(){
                 id="email" 
                 name={LoginFormKeys[LoginFormKeys.Email]}
                 placeholder="Sokka@gmail.com"
-                value={values.email}
+                value={values[LoginFormKeys.Email]}
                 onChange={onChange} />
 
                 <label htmlFor="login-pass">Password:</label>
