@@ -12,7 +12,7 @@ export default function Login(){
     const {loginSubmitHandler} = useContext(AuthContext);
     const {values, onChange, onSubmit} = useForm(loginSubmitHandler,{
         [LoginFormKeys.Email]:'',
-        [LoginFormKeys.Password]:''
+        [LoginFormKeys.Password]:'',
 });
     return(
         <section id="login-page" className="auth">
@@ -25,7 +25,7 @@ export default function Login(){
                 <input 
                 type="email" 
                 id="email" 
-                name={LoginFormKeys[LoginFormKeys.Email]}
+                name={[LoginFormKeys.Email]}
                 placeholder="Sokka@gmail.com"
                 value={values[LoginFormKeys.Email]}
                 onChange={onChange} />
