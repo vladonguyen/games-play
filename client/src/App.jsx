@@ -12,6 +12,7 @@ import Logout from "./components/logout/Logout";
 import Register from './components/register/Register'
 import GameDetails from './components/game-details/GameDetails'
 import GameEdit from './components/game-edit/GameEdit';
+import GameDelete from './components/game-delete/GameDelete';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path='/games/:gameId' element={<GameDetails />} />
           <Route path={Path.GameEdit} element={<GameEdit />} />
           <Route path={Path.Logout} element={<Logout />} />
+          <Route path={Path.GameDelete} element={<GameDelete />} />
         </Routes>
 
       </div>

@@ -4,7 +4,6 @@ const baseUrl = 'http://localhost:3030/data/games'
 
 export const getAll = async () => {
 const result = await request.get(baseUrl);
-console.log(result)
 return result;
 };
 
@@ -23,6 +22,12 @@ export const create = async (gameData) => {
 
 export const edit = async (gameId, gameData) => {
     const result = await request.put(`${baseUrl}/${gameId}`, gameData);
+
+    return result;
+}
+
+export const deleteGame = async (gameId) => {
+    const result = await request.remove(`${baseUrl}/${gameId}`);
 
     return result;
 }
