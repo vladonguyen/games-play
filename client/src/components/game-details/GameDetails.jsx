@@ -1,10 +1,13 @@
-import { useContext, useEffect, useReducer, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useContext, useEffect, useMemo, useReducer, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import * as gameService from '../../services/gameService';
 import * as commentService from '../../services/commentService';
 import AuthContext from "../../context/authContext";
 import reducer from "./commentReducer";
 import useForm from "../../hooks/useForms";
+import { pathToUrl } from "../utils/pathUtils";
+import GameEdit from "../game-edit/GameEdit";
+import Path from "../../paths";
 
 
 export default function GameDetails() {
@@ -42,8 +45,12 @@ export default function GameDetails() {
             });
             
     }
+// TODO: temp solution for form reinitialization
+    const initialValues = useMemo(()=>({
+        comment:'',
+    }), []);
 
-    const {values, onChange, onSubmit} = useForm(addCommentHandler, {comment:''})
+    const {values, onChange, onSubmit} = useForm(addCommentHandler, initialValues)
      
          
     return (
@@ -83,8 +90,8 @@ export default function GameDetails() {
                
 {userId === game._ownerId && (
  <div className="buttons">
- <a href="#" className="button">Edit</a>
- <a href="#" className="button">Delete</a>
+ <Link to={pathToUrl(Path.GameEdit, {gameId})} className="button">Edit</Link>
+ <Link to="/games/:gameId/delete" className="button">Delete</Link>
 </div>
 )};
 
