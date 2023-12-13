@@ -27,13 +27,17 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/games' element={<GameList /> } />
-          <Route path='/games/create' element={<AuthGuard><GameCreate /></AuthGuard>} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/games/:gameId' element={<GameDetails />} />
-          <Route path={Path.GameEdit} element={<GameEdit />} />
-          <Route path={Path.Logout} element={<Logout />} />
           <Route path={Path.GameDelete} element={<GameDelete />} />
+
+          <Route element={<AuthGuard />}>
+<Route path='/games/create' element={<GameCreate />} />
+<Route path={Path.GameEdit} element={<GameEdit />} />
+          <Route path={Path.Logout} element={<Logout />} />
+
+          </Route>
         </Routes>
 
       </div>
