@@ -50,7 +50,9 @@ export default function GameDetails() {
         comment:'',
     }), []);
 
-    const {values, onChange, onSubmit} = useForm(addCommentHandler, initialValues)
+    const {values, onChange, onSubmit} = useForm(addCommentHandler, initialValues);
+
+   
      
          
     return (

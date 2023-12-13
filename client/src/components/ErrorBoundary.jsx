@@ -1,0 +1,23 @@
+import { Component } from "react";
+
+export default class ErrorBoundary extends Component {
+    static getDerivedStateFromError(err) {
+        console.log('getDerivedStateFromError');
+        return {
+            hasError: true,
+        }
+    }
+    componentDidCatch(error, errorInfo) {
+        console.log('componentDidCatch');
+        //TODO logging
+
+    }
+
+    render() {
+        if (this.state.hasError) {
+            return <h1>404</h1>
+        }
+
+        return this.props.children;
+    }
+}

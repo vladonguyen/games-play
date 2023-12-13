@@ -13,11 +13,13 @@ import Register from './components/register/Register'
 import GameDetails from './components/game-details/GameDetails'
 import GameEdit from './components/game-edit/GameEdit';
 import GameDelete from './components/game-delete/GameDelete';
+import ErrorBoundary from './components/ErrorBoundary';
 
 
 function App() {
  
   return (
+    <ErrorBoundary>
     <AuthProvider>
       <div id="box">
         <Header />
@@ -35,7 +37,7 @@ function App() {
 
       </div>
     </AuthProvider >
-
+    </ErrorBoundary>
   )
 }
 
