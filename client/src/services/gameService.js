@@ -32,3 +32,9 @@ export const deleteGame = async (gameId) => {
     return result;
 }
 
+export const remove = async (gameId) => {
+  const result =   request.remove(`${baseUrl}/${gameId}`);
+
+    return result;
+}
+
